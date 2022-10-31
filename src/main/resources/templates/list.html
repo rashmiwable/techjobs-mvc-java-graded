@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
-    <head th:replace="fragments :: head"></head>
+    <head th:replace="fragments :: head">
+        <link th:href="@{styles.css}"rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"rel="stylesheet"/>
+    </head>
 
     <body>
 
@@ -19,8 +22,12 @@
             </tr>
             <tr>
                 <!-- TODO #2: Complete the View Jobs By Category Table. -->
-
-                <td></td> <!-- Feel free to remove or modify this element if necessary. -->
+                <td>
+                    <li>
+                        <a th:href="@{/list/jobs(column='all')}">View All</a>
+                    </li>
+                </td>
+                <!-- Feel free to remove or modify this element if necessary. -->
 
                 <td th:each="category : ${tableChoices}">
                     <ul>
